@@ -2772,6 +2772,10 @@ another auto-completion with different ac-sources (e.g. ac-php)")
            ((string= sub2 "@y")
             (setq closing-string ")"
                   delim-open "@"))
+           ((and (looking-at-p "[[:alnum:]]+(") (string= sub1 "@")
+            (setq closing-string ")"
+                  delim-open "@"))
+            )
            ((string= sub1 "@")
             (setq closing-string "EOL"
                   delim-open "@"))
